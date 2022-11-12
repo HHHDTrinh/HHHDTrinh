@@ -9,10 +9,10 @@
 
 <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" align="right" width="200" />
 
-- 👨‍💻 I'm currently working on some course project
-- 🌱 I’m currently learning Javascript, ReactJS, Sass, Tailwindcss
-- ✋ I’m looking for help with NodeJS, Redux, Redux Toolkit, TypeScript
-- ♥  My hobbies are reading books, playing games, and learning new things
+-   I'm currently working on some course project
+-   I’m currently learning Javascript, ReactJS, Sass, Tailwindcss
+-   I’m looking for help with NodeJS, Redux, Redux Toolkit, TypeScript
+-   My hobbies are reading books, playing games, and learning new things
 
 <h1>🛠️ Languages and Tools</h1>
 
