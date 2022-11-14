@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import { MdOutlineClose } from 'react-icons/md';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { FiDownload } from 'react-icons/fi';
@@ -12,19 +12,37 @@ const Navbar = ({ isMobile }) => {
         setOpenMenu(!openMenu);
     };
 
+    window.addEventListener('scroll', function () {
+        const navElement = document.getElementById('navbar');
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            navElement.style.background = '#fff';
+        } else {
+            navElement.style.background = 'transparent';
+        }
+    });
+
     useEffect(() => {
         if (openMenu) {
             document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'visible';
         }
     }, [openMenu]);
 
     return (
-        <nav className="flex relative justify-between items-center text-white h-fit lg:mx-5 text-[2rem]">
-            <h1 className="text-[3rem] lg:text-6xl font-montez italic">HHDT</h1>
+        <nav
+            id="navbar"
+            className="px-4 flex justify-between items-center text-purple-900
+            h-[80px] min-h-[80px] lg:h-[90px] lg:min-h-[90px] fixed w-full uppercase text-[1.8rem] lg:text-[2rem] z-10 top-[-5px]"
+        >
+            <h1 className="text-[3rem] xl:text-6xl font-montez italic">HHDT</h1>
             {openMenu && isMobile ? (
-                <div className="fixed flex flex-col justify-between inset-0 p-4 bg-purple-500 animate-slideright overscroll-contain">
-                    <div className="flex items-center justify-between">
-                        <h1 className="text-[3rem] lg:text-6xl font-montez italic">
+                <div className="fixed flex flex-col justify-between px-4 py-2 inset-0 bg-white animate-slideleft overscroll-contain">
+                    <div className="flex items-center justify-between h-[60px] min-h-[60px]">
+                        <h1 className="text-[3rem] xl:text-6xl font-montez italic">
                             HHDT
                         </h1>
                         <MdOutlineClose
@@ -33,43 +51,63 @@ const Navbar = ({ isMobile }) => {
                             onClick={handleMenu}
                         />
                     </div>
-                    <div className="flex flex-col items-center gap-10">
-                        <NavLink
-                            onClick={handleMenu}
-                            className={({ isActive }) =>
-                                isActive ? 'text-black' : 'text-[wheat]'
-                            }
-                            to="/"
-                        >
-                            Home
-                        </NavLink>
-                        <NavLink
-                            onClick={handleMenu}
-                            className={({ isActive }) =>
-                                isActive ? 'text-black' : 'text-[wheat]'
-                            }
-                            to="/about"
-                        >
-                            About me
-                        </NavLink>
-                        <NavLink
-                            onClick={handleMenu}
-                            className={({ isActive }) =>
-                                isActive ? 'text-black' : 'text-[wheat]'
-                            }
-                            to="/contact"
-                        >
-                            Contact
-                        </NavLink>
-                        <NavLink
-                            onClick={handleMenu}
-                            className={({ isActive }) =>
-                                isActive ? 'text-black' : 'text-[wheat]'
-                            }
-                            to="/portfolio"
-                        >
-                            Portfolio
-                        </NavLink>
+                    <ul className="flex flex-col items-center gap-10 -translate-y-20">
+                        <li>
+                            <Link
+                                onClick={handleMenu}
+                                className="text-black"
+                                offset={-10}
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="hero-banner"
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={handleMenu}
+                                className="text-black"
+                                offset={-10}
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="about"
+                            >
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={handleMenu}
+                                className="text-black"
+                                offset={-10}
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="contact"
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={handleMenu}
+                                className="text-black"
+                                offset={-10}
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="portfolio"
+                            >
+                                Portfolio
+                            </Link>
+                        </li>
                         <button className="btn btn-animation w-[60%] max-w-[165px]">
                             <span></span>
                             <span></span>
@@ -87,7 +125,7 @@ const Navbar = ({ isMobile }) => {
                                 />
                             </span>
                         </button>
-                    </div>
+                    </ul>
                     <div className="border-t-2">This is footer</div>
                 </div>
             ) : !openMenu && isMobile ? (
@@ -97,47 +135,64 @@ const Navbar = ({ isMobile }) => {
                     onClick={handleMenu}
                 />
             ) : (
-                <>
-                    <div className="flex gap-10 ml-[50%]">
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-purple-900' : 'text-white'
-                            }
-                            to="/"
-                        >
-                            Home
-                        </NavLink>
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-purple-900' : 'text-white'
-                            }
-                            to="/about"
-                        >
-                            About me
-                        </NavLink>
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-purple-900' : 'text-white'
-                            }
-                            to="/contact"
-                        >
-                            Contact
-                        </NavLink>
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-purple-900' : 'text-white'
-                            }
-                            to="/portfolio"
-                        >
-                            Portfolio
-                        </NavLink>
-                    </div>
-                    <button className="btn btn-animation w-[10%]">
+                <div className="">
+                    <ul className="flex gap-10 justify-end">
+                        <li>
+                            <Link
+                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="hero-banner"
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="about"
+                            >
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="contact"
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="portfolio"
+                            >
+                                Portfolio
+                            </Link>
+                        </li>
+                    </ul>
+                    {/* <button className="btn btn-animation">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span>
                             <a
+                                className="text-[1.45rem]"
                                 href={MyResume}
                                 download="CV_Ho_Huy_Duc_Trinh_Frontend_Developer"
                             >
@@ -148,8 +203,8 @@ const Navbar = ({ isMobile }) => {
                                 className="ml-[6px] pb-1"
                             />
                         </span>
-                    </button>
-                </>
+                    </button> */}
+                </div>
             )}
         </nav>
     );

@@ -6,6 +6,13 @@ module.exports = {
             fontFamily: {
                 montez: ['Montez'],
             },
+            boxShadow: {
+                'navbar-shadow': '0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%)',
+            },
+            backgroundColor: {
+                'banner-icon': 'hsla(0,0%,100%,.3)',
+                'overlay-icon': 'rgba(0,0,0,.3)',
+            },
             colors: {
                 black: '#191624',
                 'purple-200': '#DAC7FC',

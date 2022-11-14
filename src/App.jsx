@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
 
-import { Navbar, Home } from './components/index';
-import { About, Contact, Portfolio } from './pages/index';
+import { Footer, Home, Navbar } from './components/index';
 
 const App = () => {
     const [windowSize, setWindowSize] = useState({
@@ -31,14 +29,10 @@ const App = () => {
         }
     }, [windowSize]);
     return (
-        <div className="overflow-y-auto overflow-x-hidden h-screen p-4 lg:px-4 lg:py-8 bg-gradient-to-b from-purple-500 to-purple-300">
+        <div className="h-full">
             <Navbar isMobile={isMobile} />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-            </Routes>
+            <Home />
+            <Footer />
         </div>
     );
 };

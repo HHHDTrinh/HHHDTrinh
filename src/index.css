@@ -21,10 +21,14 @@ body {
     line-height: 1.6;
 }
 
+.active {
+    color: #ff2a39;
+}
+
 .btn {
-    --body-bg: #dac7fc;
-    --btn-gradient: linear-gradient(to right, #6b49cd 0%, #6b49cd 100%);
-    --btn-txt-color: #ffffff;
+    --body-bg: #191624;
+    --btn-color: #fff;
+    --btn-txt-color: #191624;
     position: relative;
     border: none;
     outline: none;
@@ -45,8 +49,8 @@ body {
 }
 
 .btn-animation span:nth-child(1) {
-    padding: 2.2rem 6.6rem;
-    background-image: var(--btn-gradient);
+    padding: 2.4rem 6.6rem;
+    background-image: var(--btn-color);
     border-radius: 5px;
 }
 
@@ -65,11 +69,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: var(--btn-gradient);
+    background: var(--btn-color);
     color: var(--btn-txt-color);
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.5rem;
     transition: all 0.3s ease;
     border-radius: 1px;
 }
@@ -83,15 +86,47 @@ body {
 .btn-animation span:nth-child(3) {
     width: calc(100% - 4px);
     height: calc(100% - 4px);
-    background-color: #210035;
+    background-color: var(--body-bg);
     border-radius: 4px;
 }
 
 .btn-animation span:nth-child(2) {
     height: 60%;
     width: 100%;
-    background-color: var(--body-bg);
+    background-color: #ff2625;
     animation: rotate 2s linear infinite;
+}
+
+.hero__banner-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.2),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url('./assets/images/me.jpg') center / cover no-repeat;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero__banner-bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: url('./assets/images/herobanner.png') no-repeat scroll center 0 /
+        cover;
+    height: 246px;
+    top: auto;
+    bottom: -1px;
+    z-index: 0;
 }
 
 @keyframes rotate {

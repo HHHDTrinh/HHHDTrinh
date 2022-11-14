@@ -1,7 +1,14 @@
-import React from 'react';
+import { HeroBanner, About, Contact, Portfolio } from '../pages/index';
 
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <>
+            <HeroBanner />
+            <About />
+            <Contact />
+            <Portfolio />
+        </>
+    );
 };
 
 export default Home;
