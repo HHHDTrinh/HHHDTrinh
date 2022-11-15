@@ -26,8 +26,6 @@ body {
 }
 
 .btn {
-    --body-bg: #191624;
-    --btn-color: #fff;
     --btn-txt-color: #191624;
     position: relative;
     border: none;
@@ -50,7 +48,6 @@ body {
 
 .btn-animation span:nth-child(1) {
     padding: 2.4rem 6.6rem;
-    background-image: var(--btn-color);
     border-radius: 5px;
 }
 
@@ -69,9 +66,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--btn-color);
     color: var(--btn-txt-color);
-    text-transform: uppercase;
     font-weight: 600;
     transition: all 0.3s ease;
     border-radius: 1px;
@@ -86,14 +81,12 @@ body {
 .btn-animation span:nth-child(3) {
     width: calc(100% - 4px);
     height: calc(100% - 4px);
-    background-color: var(--body-bg);
     border-radius: 4px;
 }
 
 .btn-animation span:nth-child(2) {
     height: 60%;
     width: 100%;
-    background-color: #ff2625;
     animation: rotate 2s linear infinite;
 }
 

@@ -18,7 +18,7 @@ const Navbar = ({ isMobile }) => {
             document.body.scrollTop > 20 ||
             document.documentElement.scrollTop > 20
         ) {
-            navElement.style.background = '#fff';
+            navElement.style.background = '#f5f5f5';
         } else {
             navElement.style.background = 'transparent';
         }
@@ -40,7 +40,7 @@ const Navbar = ({ isMobile }) => {
         >
             <h1 className="text-[3rem] xl:text-6xl font-montez italic">HHDT</h1>
             {openMenu && isMobile ? (
-                <div className="fixed flex flex-col justify-between px-4 py-2 inset-0 bg-white animate-slideleft overscroll-contain">
+                <div className="fixed flex flex-col justify-between px-4 py-2 inset-0 bg-[#f5f5f5] animate-slideleft overscroll-contain">
                     <div className="flex items-center justify-between h-[60px] min-h-[60px]">
                         <h1 className="text-[3rem] xl:text-6xl font-montez italic">
                             HHDT
@@ -56,7 +56,7 @@ const Navbar = ({ isMobile }) => {
                             <Link
                                 onClick={handleMenu}
                                 className="text-black"
-                                offset={-10}
+                                offset={-30}
                                 activeClass="active"
                                 spy={true}
                                 smooth={true}
@@ -70,7 +70,7 @@ const Navbar = ({ isMobile }) => {
                             <Link
                                 onClick={handleMenu}
                                 className="text-black"
-                                offset={-10}
+                                offset={-80}
                                 activeClass="active"
                                 spy={true}
                                 smooth={true}
@@ -84,21 +84,7 @@ const Navbar = ({ isMobile }) => {
                             <Link
                                 onClick={handleMenu}
                                 className="text-black"
-                                offset={-10}
-                                activeClass="active"
-                                spy={true}
-                                smooth={true}
-                                duration={300}
-                                to="contact"
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                onClick={handleMenu}
-                                className="text-black"
-                                offset={-10}
+                                // offset={-10}
                                 activeClass="active"
                                 spy={true}
                                 smooth={true}
@@ -108,11 +94,25 @@ const Navbar = ({ isMobile }) => {
                                 Portfolio
                             </Link>
                         </li>
+                        <li>
+                            <Link
+                                onClick={handleMenu}
+                                className="text-black"
+                                // offset={-80}
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                duration={300}
+                                to="contact"
+                            >
+                                Contact
+                            </Link>
+                        </li>
                         <button className="btn btn-animation w-[60%] max-w-[165px]">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span>
+                            <span className="bg-[whitesmoke]"></span>
+                            <span className="bg-[#ff2625]"></span>
+                            <span className="bg-[#191624]"></span>
+                            <span className="bg-[whitesmoke]">
                                 <a
                                     href={MyResume}
                                     download="CV_Ho_Huy_Duc_Trinh_Frontend_Developer"
@@ -142,6 +142,7 @@ const Navbar = ({ isMobile }) => {
                                 className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
                                 activeClass="active"
                                 spy={true}
+                                offset={-30}
                                 smooth={true}
                                 duration={300}
                                 to="hero-banner"
@@ -154,6 +155,7 @@ const Navbar = ({ isMobile }) => {
                                 className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
                                 activeClass="active"
                                 spy={true}
+                                offset={-100}
                                 smooth={true}
                                 duration={300}
                                 to="about"
@@ -166,18 +168,7 @@ const Navbar = ({ isMobile }) => {
                                 className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
                                 activeClass="active"
                                 spy={true}
-                                smooth={true}
-                                duration={300}
-                                to="contact"
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
-                                activeClass="active"
-                                spy={true}
+                                offset={-100}
                                 smooth={true}
                                 duration={300}
                                 to="portfolio"
@@ -185,25 +176,20 @@ const Navbar = ({ isMobile }) => {
                                 Portfolio
                             </Link>
                         </li>
-                    </ul>
-                    {/* <button className="btn btn-animation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span>
-                            <a
-                                className="text-[1.45rem]"
-                                href={MyResume}
-                                download="CV_Ho_Huy_Duc_Trinh_Frontend_Developer"
+                        <li>
+                            <Link
+                                className="text-purple-900 cursor-pointer hover:text-[#ff2a39]"
+                                activeClass="active"
+                                spy={true}
+                                offset={-100}
+                                smooth={true}
+                                duration={300}
+                                to="contact"
                             >
-                                My Resume
-                            </a>
-                            <FiDownload
-                                size={'16px'}
-                                className="ml-[6px] pb-1"
-                            />
-                        </span>
-                    </button> */}
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             )}
         </nav>

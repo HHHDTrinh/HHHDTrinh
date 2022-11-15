@@ -6,7 +6,10 @@ import { FaLinkedinIn } from 'react-icons/fa';
 
 const HeroBanner = () => {
     return (
-        <section id="hero-banner" className="border-b-[1px] border-[#ccc]">
+        <section
+            id="hero-banner"
+            className="xl:border-b-[1px] xl:border-[#ccc]"
+        >
             <div className="hero__banner-bg">
                 <div className="flex justify-center items-center w-full">
                     <div className="relative text-[whitesmoke] text-left">

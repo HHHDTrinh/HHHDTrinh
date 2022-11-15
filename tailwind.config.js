@@ -7,12 +7,14 @@ module.exports = {
                 montez: ['Montez'],
             },
             boxShadow: {
-                'navbar-shadow': '0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%)',
+                'about-shadow':
+                    '6px 6px 16px 0 rgba(0, 0, 0, 0.25),-4px -4px 12px 0 rgba(255, 255, 255, 0.3)',
             },
             backgroundColor: {
                 'banner-icon': 'hsla(0,0%,100%,.3)',
                 'overlay-icon': 'rgba(0,0,0,.3)',
             },
+            container: false,
             colors: {
                 black: '#191624',
                 'purple-200': '#DAC7FC',
@@ -38,5 +40,41 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addComponents }) {
+            addComponents({
+                '.container': {
+                    maxWidth: '100%',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
+                    '@media (min-width: 576px)': {
+                        maxWidth: '540px',
+                    },
+                    '@media (min-width: 768px)': {
+                        maxWidth: '720px',
+                    },
+                    '@media (min-width: 992px)': {
+                        maxWidth: '960px',
+                    },
+                    '@media (min-width: 1200px)': {
+                        maxWidth: '1140px',
+                    },
+                },
+                '.row': {
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    marginLeft: '-15px',
+                    marginRight: '-15px',
+                },
+                '.col': {
+                    position: 'relative',
+                    width: '100%',
+                    paddingRight: '15px',
+                    paddingLeft: '15px',
+                },
+            });
+        },
+    ],
 };

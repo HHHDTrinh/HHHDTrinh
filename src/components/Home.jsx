@@ -5,8 +5,8 @@ const Home = () => {
         <>
             <HeroBanner />
             <About />
-            <Contact />
             <Portfolio />
+            <Contact />
         </>
     );
 };

@@ -29,7 +29,7 @@ const App = () => {
         }
     }, [windowSize]);
     return (
-        <div className="h-full">
+        <div className="bg-[whitesmoke] h-full">
             <Navbar isMobile={isMobile} />
             <Home />
             <Footer />
